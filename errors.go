@@ -31,7 +31,7 @@ func IsErrorCode(err error, code string) bool {
 	}
 
 	var lErr Error
-	if errors.As(err, &lErr) {
+	if errors.Is(err, lErr) {
 		return lErr.ErrCode() == code
 	}
 
